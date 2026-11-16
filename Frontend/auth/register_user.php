@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'], $_SESSION['role']) && in_array($_SESSION['role']
         <p style="color:red"><?= htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></p>
     <?php endif; ?>
 
-    <form action="../../Auth/proses_registrasi.php" method="POST">
+    <form action="../../Auth/proses_register.php" method="POST">
         <div>
             <label>Nama Lengkap:</label><br>
             <input type="text" name="NamaLengkap" required>
