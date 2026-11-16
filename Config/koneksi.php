@@ -1,8 +1,17 @@
 <?php
-session_start();
-$conn = new mysqli("localhost", "root", "", "cantine1db");
+class koneksi
+{
+    private $host = "localhost";
+    private $user = "root";
+    private $pass = "";
+    private $db = "kantin";
+    public $conn;
 
-if ($conn->connect_error) {
-    die("Koneksi gagal!");
+    public function __construct() {
+        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
+        if ($this->conn->connect_error) {
+            die("data eror: " . $this->conn->connect_error);
+        }
+    }
 }
 ?>
