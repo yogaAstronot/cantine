@@ -11,7 +11,7 @@ if ($_SESSION['Role'] != 'admin') { header("Location: ../../index.php"); exit; }
     <p><?= $_SESSION['error']; unset($_SESSION['error']); ?></p>
 <?php endif; ?>
 
-<form action="../../Admin/proses_registrasi.php" method="POST">
+<form action="/cantine/Admin/proses_resgistrasi.php" method="POST">
     <div>
         <label>Nama Lengkap / Toko:</label><br>
         <input type="text" name="NamaLengkap" required>
@@ -28,8 +28,6 @@ if ($_SESSION['Role'] != 'admin') { header("Location: ../../index.php"); exit; }
         <label>Role:</label><br>
         <select name="Role">
             <option value="penjual" selected>Penjual</option>
-            <option value="guru">Guru</option>
-            <option value="siswa">Siswa</option>
             <option value="admin">Admin</option>
         </select>
     </div><br>

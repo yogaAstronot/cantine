@@ -25,6 +25,7 @@ $Role = $_SESSION['Role'];
         <a href="../penjual/produk.php">Produk Saya</a> |
         <a href="../penjual/kupon.php">Kupon Diskon</a> |
         <a href="../penjual/pesanan.php">Pesanan Masuk</a> |
+        <a href="../penjual/profil.php">Qris Code</a>
     <?php else: ?>
         <a href="../user/katalog.php">Belanja Produk</a> |
         <a href="../user/riwayat.php">Riwayat Belanja</a> |

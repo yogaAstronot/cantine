@@ -48,5 +48,11 @@ class Auth extends koneksi {
             exit;
         }
     }
+
+    public function updateQRISPenjual($PenjualID, $NamaFileQRIS) {
+    $PenjualID    = (int)$PenjualID;
+    $NamaFileQRIS = $this->conn->real_escape_string($NamaFileQRIS);
+    return $this->conn->query("UPDATE user SET GambarQRIS = '$NamaFileQRIS' WHERE UserID = $PenjualID");
+}
 }
 ?>

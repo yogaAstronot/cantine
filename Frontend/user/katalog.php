@@ -10,6 +10,7 @@ $filter_kat     = $_GET['KategoriID'] ?? '';
 $kategori_list  = $produkObj->getAllKategori();
 $produk_list    = $produkObj->getProduk($filter_kat);
 $pelanggan_list = $trxObj->getAllPelanggan();
+$kelas_list     = $trxObj->getAllKelas(); 
 
 $keranjang = $_SESSION['keranjang'] ?? [];
 $kupon     = $_SESSION['kupon'] ?? null;
@@ -99,17 +100,28 @@ $TotalHarga    = max(0, $total_belanja - $PotonganHarga);
 
 <p>
     Subtotal: <strong>Rp <?= number_format($total_belanja, 0, ',', '.') ?></strong><br>
-    PotonganHarga: <strong>- Rp <?= number_format($PotonganHarga, 0, ',', '.') ?></strong><br>
+    PotonganHarga: <strong>Rp -<?= number_format($PotonganHarga, 0, ',', '.') ?></strong><br>
     TotalHarga: <strong>Rp <?= number_format($TotalHarga, 0, ',', '.') ?></strong>
 </p>
 
 <form action="../../User/proses_checkout.php" method="POST">
-    <label>PelangganID:</label>
-    <select name="PelangganID">
-        <?php foreach ($pelanggan_list as $plg): ?>
-            <option value="<?= $plg['PelangganID'] ?>"><?= $plg['NamaPelanggan'] ?></option>
+    <label>Kelas Pembeli (Kosongkan jika Guru):</label><br>
+    <select name="KelasID" <?= ($_SESSION['Role'] === 'siswa') ? 'required' : '' ?>>
+        <option value="">-- Pilih Kelas / Umum --</option>
+        <?php foreach ($kelas_list as $kls): ?>
+            <option value="<?= $kls['KelasID'] ?>"><?= htmlspecialchars($kls['NamaKelas']) ?></option>
         <?php endforeach; ?>
-    </select>
+    </select><br><br>
+
+    <label>Metode Pembayaran:</label><br>
+    <select name="MetodePembayaran" required>
+        <option value="cash">Cash (Bayar di Tempat)</option>
+        <option value="qris">QRIS (Scan & Upload Bukti)</option>
+    </select><br><br>
+
+    <label>Catatan untuk Penjual (Opsional):</label><br>
+    <textarea name="CatatanPembeli" rows="3" cols="35" placeholder="Contoh: Pedas, jangan pakai seledri, bungkus terpisah..."></textarea><br><br>
+
     <button type="submit" name="checkout" <?= empty($keranjang) ? 'disabled' : '' ?>>Bayar Sekarang</button>
 </form>
 <?php require_once '../layout/footer.php'; ?>
