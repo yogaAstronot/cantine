@@ -29,10 +29,10 @@ if (isset($_SESSION['UserID'], $_SESSION['Role'])) {
     <link href="Assets/css/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="Assets/css/struk.css">
-
+    <link rel="stylesheet" href="Assets/css/slider.css">
 </head>
 
-<body class="bg-[#F6FAF4] text-[#17261F] antialiased">
+<body class="bg-[#F6FAF4] text-[#17261F] antialiased opacity-0 translate-y-2 transition-all duration-1000 ease-out">
 
     <header class="sticky top-0 z-30 border-b border-[#17261F]/10 bg-[#F6FAF4]/95 backdrop-blur">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
@@ -65,8 +65,8 @@ if (isset($_SESSION['UserID'], $_SESSION['Role'])) {
                 <li><a class="block py-3" href="#kios">Kios</a></li>
             </ul>
             <div class="flex gap-3">
-                <a href="../auth/login.php" class="flex-1 rounded-lg border border-[#17261F]/20 py-3 text-center font-semibold">Masuk</a>
-                <a href="../auth/register.php" class="flex-1 rounded-lg bg-[#1F7A4D] py-3 text-center font-semibold text-white">Daftar</a>
+                <a href="../cantine/Frontend/auth/auth_user.php" class="flex-1 rounded-lg border border-[#17261F]/20 py-3 text-center font-semibold">Masuk</a>
+                <a href="../cantine/Frontend/auth/register_user.php" class="flex-1 rounded-lg bg-[#1F7A4D] py-3 text-center font-semibold text-white">Daftar</a>
             </div>
         </div>
     </header>
@@ -91,10 +91,11 @@ if (isset($_SESSION['UserID'], $_SESSION['Role'])) {
             </div>
 
             <div>
+                <div></div>
                 <div class="tilt" id="nota">
                     <div class="slot"></div>
                     <div class="out ">
-                        <div class="rc mono b">
+                        <div class="rc mono b bg-amber-50">
                             <div class="text-center"><b style="font-size:16px;letter-spacing:.04em">CANTINE SMK</b><br>Nota pesanan No. 014</div>
                             <div class="dash"></div>
                             <div>Pemesan: XI RPL 2</div>
@@ -113,8 +114,57 @@ if (isset($_SESSION['UserID'], $_SESSION['Role'])) {
                     </div>
                 </div>
             </div>
+
+        </section>
+
+
+
+        <section>
+            <div class="carousel2">
+                <div class="group2">
+                    <div class="card2">
+                        <img src="Assets/image/ayam.jpg" alt="" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <div class="card2"><img src="Assets/image/kuning.avif" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/bakso.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/tahu.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/pecel.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/soto.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                </div>
+                <div aria-hidden class="group2">
+                    <div class="card2">
+                        <img src="Assets/image/ayam.jpg" alt="" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <div class="card2"><img src="Assets/image/kuning.avif" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/bakso.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/tahu.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/pecel.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/soto.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                </div>
             </div>
 
+            <div class="carousel">
+                <div class="group">
+                    <div class="card2">
+                        <img src="Assets/image/ayam.jpg" alt="" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <div class="card2"><img src="Assets/image/kuning.avif" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/bakso.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/tahu.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/pecel.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/soto.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                </div>
+                <div aria-hidden class="group">
+                    <div class="card2">
+                        <img src="Assets/image/ayam.jpg" alt="" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                    <div class="card2"><img src="Assets/image/kuning.avif" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/bakso.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/tahu.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/pecel.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                    <div class="card2"><img src="Assets/image/soto.jpg" alt="" class="w-full h-full object-cover rounded-2xl"></div>
+                </div>
+            </div>
         </section>
 
         <section id="cara-pesan" class="scroll-mt-20 bg-white py-14 md:py-20">
@@ -141,16 +191,13 @@ if (isset($_SESSION['UserID'], $_SESSION['Role'])) {
             </div>
         </section>
 
-
         <section id="menu" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-14 sm:px-6 md:py-20">
             <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Menu yang sering dipesan</h2>
             </div>
-
         </section>
 
         <section>
-
         </section>
 
         <section id="kios" class="scroll-mt-20 bg-[#1E3B2F] py-14 text-[#F6FAF4] md:py-20">
@@ -197,18 +244,8 @@ if (isset($_SESSION['UserID'], $_SESSION['Role'])) {
         </div>
     </footer>
 
-    <script>
-        const btn = document.getElementById('btn-menu');
-        const panel = document.getElementById('menu-hp');
-        btn.addEventListener('click', () => {
-            const terbuka = panel.classList.toggle('hidden') === false;
-            btn.setAttribute('aria-expanded', terbuka);
-        });
-        panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            panel.classList.add('hidden');
-            btn.setAttribute('aria-expanded', 'false');
-        }));
-    </script>
+
+    <script src="Assets/js/transisi.js"></script>
 </body>
 
 </html>
